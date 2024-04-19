@@ -27,7 +27,8 @@ class DataTransformation:
         This function si responsible for data trnasformation
         
         '''
-        try:
+        try: 
+            #Defining which columns should be ordinal encoded and which columns should be scaled
             numerical_columns = ["writing score", "reading score"]
             categorical_columns = [
                 "gender",
@@ -97,7 +98,8 @@ class DataTransformation:
             logging.info(
                 f"Applying preprocessing object on training dataframe and testing dataframe."
             )
-
+            # Calling the pipeline of columntransformer to fit and transform the train_set and transform 
+            #test_set
             input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df)
 
